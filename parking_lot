@@ -1,0 +1,9 @@
+if [ $# -eq 0 ]
+  then
+    echo "Please provide input argument: <filename>"
+    exit
+fi
+mvn clean
+mvn package
+java -cp ${PWD}/target/parking_lot-1.0-SNAPSHOT.jar org.harjinder.parkinglot.cli.ParkingLotCLI $1
+
